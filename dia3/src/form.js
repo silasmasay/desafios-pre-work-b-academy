@@ -1,6 +1,14 @@
-const box = document.querySelector('[data-js="box-people"]');
-const inputName = document.querySelector('form[data-js="form-people"] input#name')
+// Elementos DOM
+const format = document.querySelector('[data-js="format-people"]');
+const inputName = document.querySelector('[data-js="form-people"] #name');
 
+const boxSelect = document.querySelector('[data-js="box-select"');
+
+// Elementos - criação nó select
+const select = document.createElement('select');
+const boxColors = document.createElement('div');
+
+// Evento - Tratamento do nome do usuário
 inputName.addEventListener('input', function (ev) {
   ev.preventDefault();
 
@@ -13,10 +21,41 @@ inputName.addEventListener('input', function (ev) {
                 }).join(' ');
 
 
-  box.innerHTML = `
+  format.innerHTML = `
     <div>
       <h1>Nome Formatado</h1>
       <p>${name ? name : '???'}</p>
     </div>
   `;
 });
+
+// HTML/Evento - Incremento das informações no select como eventos e conteúdo
+select.setAttribute('multiple', '');
+select.innerHTML = `
+  <option value="black">Preto</option>
+  <option value="blue">Azul</option>
+  <option value="green">Verde</option>
+  <option value="red">Vermelho</option>
+  <option value="gray">Cinza</option>
+`;
+
+boxColors.className = 'colors-select'
+
+select.addEventListener('change', function (ev) {
+  [...this.children].map((opt) => {
+    const box = document.querySelector(`.${opt.value}`);
+
+    if (box) box.remove();
+
+    if (opt.selected) {
+      const boxOption = document.createElement('div');
+
+      boxOption.className = `box-color-select ${opt.value}`;
+
+      boxColors.appendChild(boxOption);
+    }
+  });
+});
+
+boxSelect.appendChild(select);
+boxSelect.appendChild(boxColors);

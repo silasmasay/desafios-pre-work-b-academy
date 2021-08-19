@@ -7,13 +7,11 @@
   margin-top: 60px;
 }
 
-.form-people, .box-people {
+.box-people, .colors-select  {
   display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
-.form-people div, .box-people div {
+.form-people div, .format-people div {
   padding: 2rem;
   margin: 1rem;
   border-radius: 0.25rem;
@@ -28,10 +26,18 @@
   display: inline-block;
 }
 
-.form-people input {
+input {
+  height: 2rem;
+}
+
+select[multiple] {
+  height: auto;
+  margin: 1rem;
+}
+
+input, select {
   display: block;
   width: 200px;
-  height: 2rem;
   padding: 0.375rem 0.725rem;
   font-weight: 400;
   line-height: 1.5;
@@ -40,4 +46,31 @@
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border-radius: 0.25rem;
+}
+
+.box-color-select {
+  display: block;
+  height: 100px;
+  width: 100px;
+  border-radius: 0.25rem;
+}
+
+.box-color-select.black {
+  background: black;
+}
+
+.box-color-select.blue {
+  background: blue;
+}
+
+.box-color-select.green {
+  background: green;
+}
+
+.box-color-select.red {
+  background: red;
+}
+
+.box-color-select.gray {
+  background: gray;
 }

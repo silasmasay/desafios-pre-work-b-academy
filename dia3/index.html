@@ -8,14 +8,18 @@
   </head>
   <body>
     <div data-js="app" id="app">
-      <form data-js="form-people" class="form-people" method="post">
-        <div>
-          <label for="name">Digite seu Nome</label>
-          <input id="name" placeholder="Digite seu Nome" type="text" />
-        </div>
-      </form>
+      <div data-js="people" class="box-people">
+        <form data-js="form-people" class="form-people" method="post">
+          <div>
+            <label for="name">Digite seu Nome</label>
+            <input id="name" placeholder="Digite seu Nome" type="text" />
+          </div>
+        </form>
 
-      <div data-js="box-people" class="box-people"></div>
+        <div data-js="format-people" class="format-people"></div>
+      </div>
+
+      <div data-js="box-select"></div>
     </div>
 
     <script type="module" src="/src/main.js"></script>
