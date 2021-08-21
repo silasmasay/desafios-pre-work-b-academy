@@ -8,7 +8,7 @@
   </head>
   <body>
     <div data-js="app" id="app">
-      <div data-js="people" class="box-people">
+      <section>
         <form data-js="form-people" class="form-people" method="post">
           <div>
             <label for="name">Digite seu Nome</label>
@@ -17,9 +17,59 @@
         </form>
 
         <div data-js="format-people" class="format-people"></div>
-      </div>
+      </section>
 
-      <div data-js="box-select"></div>
+      <section data-js="box-select"></section>
+
+      <section class="cars">
+        <form data-js="form-cars" class="form-cars" method="post">
+          <div>
+            <label for="image">Imagem (URL)</label>
+            <input id="image" placeholder="Imagem (URL)" type="text" />
+          </div>
+
+          <div>
+            <label for="mark">Marca</label>
+            <input id="mark" placeholder="Marca" type="text" />
+          </div>
+
+          <div>
+            <label for="model">Modelo</label>
+            <input id="model" placeholder="Modelo" type="text" />
+          </div>
+
+          <div>
+            <label for="year">Ano</label>
+            <input id="year" placeholder="Ano" type="number" />
+          </div>
+
+          <div>
+            <label for="plate">Placa</label>
+            <input id="plate" placeholder="Placa" type="text" />
+          </div>
+
+          <div>
+            <label for="color">Cor</label>
+            <input id="color" placeholder="Cor" type="color" />
+          </div>
+
+          <button type="submit">Cadastrar</button>
+        </form>
+
+        <table data-js="table-cars">
+          <thead>
+            <tr>
+              <th>Imagem</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Placa</th>
+              <th>Cor</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
     </div>
 
     <script type="module" src="/src/main.js"></script>
