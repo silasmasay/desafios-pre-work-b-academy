@@ -110,3 +110,30 @@ table .color-cars div {
   display: inline-block;
   border-radius: 50%;
 }
+
+.alert {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: 1.5rem;
+  transition: all linear 300ms;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transform: translateY(-100%);
+}
+
+.alert.is-active {
+  transform: translateY(2rem);
+}
+
+.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}
+
+.alert-error {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
