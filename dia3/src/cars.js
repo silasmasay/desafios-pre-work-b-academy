@@ -1,5 +1,5 @@
 const form = document.querySelector('[data-js="form-cars"]');
-const tbody = document.querySelector('[data-js="table-cars"]');
+const tbody = document.querySelector('[data-js="table-cars"] tbody');
 
 form.addEventListener('submit', function(ev) {
   ev.preventDefault();
@@ -19,7 +19,7 @@ form.addEventListener('submit', function(ev) {
     <td>${model.value}</td>
     <td>${year.value}</td>
     <td>${plate.value}</td>
-    <td>${color.value}</td>
+    <td class="color-cars"><div style="background: ${color.value};"></div></td>
   `;
 
   this.reset();

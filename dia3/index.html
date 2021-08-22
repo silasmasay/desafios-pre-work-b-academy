@@ -8,7 +8,9 @@
   </head>
   <body>
     <div data-js="app" id="app">
-      <section>
+      <section class="people">
+        <h1>Formatador de Nomes</h1>
+
         <form data-js="form-people" class="form-people" method="post">
           <div>
             <label for="name">Digite seu Nome</label>
@@ -19,56 +21,63 @@
         <div data-js="format-people" class="format-people"></div>
       </section>
 
-      <section data-js="box-select"></section>
+      <section class="select">
+        <h1>Selecionador Multiplo de Cores</h1>
+        <div data-js="box-select"></div>
+      </section>
 
       <section class="cars">
-        <form data-js="form-cars" class="form-cars" method="post">
-          <div>
-            <label for="image">Imagem (URL)</label>
-            <input id="image" placeholder="Imagem (URL)" type="text" />
-          </div>
+        <h1>Cadastro de Carros</h1>
 
-          <div>
-            <label for="mark">Marca</label>
-            <input id="mark" placeholder="Marca" type="text" />
-          </div>
+        <div class="box-cars">
+          <form data-js="form-cars" class="form-cars" method="post">
+            <div>
+              <label for="image">Imagem (URL)</label>
+              <input id="image" placeholder="Imagem (URL)" type="text" required/>
+            </div>
 
-          <div>
-            <label for="model">Modelo</label>
-            <input id="model" placeholder="Modelo" type="text" />
-          </div>
+            <div>
+              <label for="mark">Marca</label>
+              <input id="mark" placeholder="Marca" type="text" required/>
+            </div>
 
-          <div>
-            <label for="year">Ano</label>
-            <input id="year" placeholder="Ano" type="number" />
-          </div>
+            <div>
+              <label for="model">Modelo</label>
+              <input id="model" placeholder="Modelo" type="text" required/>
+            </div>
 
-          <div>
-            <label for="plate">Placa</label>
-            <input id="plate" placeholder="Placa" type="text" />
-          </div>
+            <div>
+              <label for="year">Ano</label>
+              <input id="year" placeholder="Ano" type="number" required/>
+            </div>
 
-          <div>
-            <label for="color">Cor</label>
-            <input id="color" placeholder="Cor" type="color" />
-          </div>
+            <div>
+              <label for="plate">Placa</label>
+              <input id="plate" placeholder="Placa" type="text" required/>
+            </div>
 
-          <button type="submit">Cadastrar</button>
-        </form>
+            <div>
+              <label for="color">Cor</label>
+              <input id="color" placeholder="Cor" type="color" required/>
+            </div>
 
-        <table data-js="table-cars">
-          <thead>
-            <tr>
-              <th>Imagem</th>
-              <th>Marca</th>
-              <th>Modelo</th>
-              <th>Ano</th>
-              <th>Placa</th>
-              <th>Cor</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+            <button type="submit">Cadastrar</button>
+          </form>
+
+          <table data-js="table-cars">
+            <thead>
+              <tr>
+                <th>Imagem</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Placa</th>
+                <th>Cor</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </section>
     </div>
 
