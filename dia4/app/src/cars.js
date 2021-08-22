@@ -3,22 +3,6 @@ const tbody = document.querySelector('[data-js="table-cars"] tbody');
 
 const url = 'http://localhost:3333/cars';
 
-function createNewTr(data) {
-  data.map((json) => {
-    const tr = document.createElement('tr');
-    
-    tr.innerHTML = `
-      <td><img src="${json.image}" alt="Foto do Carro"/></td>
-      <td>${json.brandModel}</td>
-      <td>${json.year}</td>
-      <td>${json.plate}</td>
-      <td class="color-cars"><div style="background: ${json.color};"></div></td>
-    `;
-    
-    tbody.appendChild(tr);
-  });
-}
-
 function createAlert(response) {
   const div = document.createElement('div');
 
@@ -36,6 +20,51 @@ function createAlert(response) {
   }, 100);
 
   document.body.prepend(div);
+}
+
+function createNewTr(data) {
+  data.map((json) => {
+    const tr = document.createElement('tr');
+    
+    tr.innerHTML = `
+      <td><img src="${json.image}" alt="Foto do Carro"/></td>
+      <td>${json.brandModel}</td>
+      <td>${json.year}</td>
+      <td>${json.plate}</td>
+      <td class="color-cars"><div style="background: ${json.color};"></div></td>
+    `;
+
+    const tdDelete = document.createElement('td');
+    const btDelete = document.createElement('button');
+
+    btDelete.dataset.plate = `${json.plate}`;
+    btDelete.innerHTML = 'Excluir';
+    btDelete.addEventListener('click', async function() {
+      const resp = await fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          plate: this.dataset.plate
+        })
+      });
+    
+      const response = await resp.json();
+
+      if (!response.error) {
+        this.closest('tr').remove();
+      }
+    
+      createAlert(response);
+    });
+
+    tdDelete.appendChild(btDelete);
+    tr.appendChild(tdDelete);
+    
+    tbody.appendChild(tr);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
